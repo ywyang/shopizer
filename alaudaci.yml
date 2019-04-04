@@ -1,0 +1,8 @@
+version: "0.1.0"
+pre_ci_boot:
+ image: stephenreed/jenkins-java8-maven-git
+ tag: "latest"
+ci:
+ - mvn package
+ - cp target/ROOT.war $ALAUDACI_DEST_DIR
+ - cp Dockerfile $ALAUDACI_DEST_DIR
